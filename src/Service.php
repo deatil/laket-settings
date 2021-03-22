@@ -45,6 +45,9 @@ class Service extends BaseService
         $this->app->view->assign([
             'laket_settings_input_item' => __DIR__ . '/../resources/view/inputItem.html',
         ]);
+        
+        // 引入函数
+        require __DIR__ . "/helper.php";
     }
     
     /**

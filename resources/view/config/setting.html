@@ -14,7 +14,7 @@
             </ul>
             <div class="layui-tab-content lake-admin-tab-content">
                 <form class="layui-form" method="post">
-                    {include file="$laket_settings_input_item"  /}
+                    {template file="laket-settings::input-item"  /}
                     
                     {if count($fields)}
                         <div class="layui-form-item">

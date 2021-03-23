@@ -41,13 +41,8 @@ class Service extends BaseService
         // 视图
         $this->loadViewsFrom(__DIR__ . '/../resources/view', 'laket-settings');
         
-        // 设置公用参数
-        $this->app->view->assign([
-            'laket_settings_input_item' => __DIR__ . '/../resources/view/inputItem.html',
-        ]);
-        
         // 引入函数
-        require __DIR__ . "/helper.php";
+        $this->loadFilesFrom(__DIR__ . "/helper.php");
     }
     
     /**

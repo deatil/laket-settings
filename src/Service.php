@@ -15,7 +15,7 @@ class Service extends BaseService
      */
     public $composer = __DIR__ . '/../composer.json';
     
-    protected $slug = '';
+    protected $slug = 'laket-admin.flash.settings';
     
     /**
      * 启动
@@ -23,8 +23,6 @@ class Service extends BaseService
     public function boot()
     {
         Flash::extend('laket/laket-settings', __CLASS__);
-        
-        $this->slug = 'laket-admin.flash.settings';
     }
     
     /**

@@ -4,13 +4,6 @@
 <div class="layui-card">
     <div class="layui-card-header layui-bg-cyan">编辑配置</div>
     <div class="layui-card-body">
-        {if $info['is_system'] == 1}
-            <blockquote class="layui-elem-quote">
-                <span class="text-danger font-weight-bold">注意：</span>
-                系统内置配置的 <span class="layui-badge layui-bg-cyan">配置名称</span> 和 <span class="layui-badge layui-bg-cyan">所属模块</span> 不能被修改
-            </blockquote>
-        {/if}
-        
         <form class="layui-form" method="post" action="{:laket_route('admin.settings.edit-post')}">
             <div class="layui-form-item">
                 <label class="layui-form-label">分组</label>

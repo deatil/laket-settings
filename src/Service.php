@@ -54,7 +54,7 @@ class Service extends BaseService
         Menu::create($menus);
         
         // 数据库
-        Flash::importSql(__DIR__ . '/../resources/database/install.sql');
+        Flash::executeSql(__DIR__ . '/../resources/database/install.sql');
     }
     
     /**
@@ -65,7 +65,7 @@ class Service extends BaseService
         Menu::delete($this->slug);
         
         // 数据库
-        Flash::importSql(__DIR__ . '/../resources/database/uninstall.sql');
+        Flash::executeSql(__DIR__ . '/../resources/database/uninstall.sql');
     }
     
     /**

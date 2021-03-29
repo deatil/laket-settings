@@ -133,16 +133,6 @@ return [
         "pattern" => ""
     ],
     [
-        "name" => "Ueditor",
-        "title" => "百度编辑器",
-        "default_define" => "text NOT NULL",
-        "type" => "text",
-        "ifoption" => 0,
-        "ifstring" => 1,
-        "vrule" => "",
-        "pattern" => ""
-    ],
-    [
         "name" => "file",
         "title" => "单文件",
         "default_define" => "varchar(32) NOT NULL DEFAULT ''",

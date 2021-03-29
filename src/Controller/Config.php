@@ -8,6 +8,7 @@ use think\facade\Validate;
 
 use Laket\Admin\Controller\Base as BaseController;
 use Laket\Admin\Settings\Model\Config as ConfigModel;
+use Laket\Admin\Settings\Event as SettingsEvent;
 
 /**
  * 系统配置
@@ -163,10 +164,13 @@ class Config extends BaseController
                 if ($value['type'] == 'datetime') {
                     $value['value'] = empty($value['value']) ? date('Y-m-d H:i:s') : $value['value'];
                 }
-                if ($value['type'] == 'Ueditor') {
-                    $value['value'] = htmlspecialchars_decode($value['value']);
-                }
             }
+            
+            // 事件
+            $eventData = new SettingsEvent\Data\ConfigControllerSettingGet($configList);
+            event(new SettingsEvent\ConfigControllerSettingGet($eventData));
+            $configList = $eventData->configs;
+            
             $this->assign([
                 'groupArray' => ConfigModel::getConfig('config_group'),
                 'fields' => $configList,

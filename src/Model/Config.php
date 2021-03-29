@@ -8,6 +8,8 @@ use think\Model;
 use think\facade\Cache;
 use think\helper\Arr;
 
+use Laket\Admin\Settings\Event as SettingsEvent;
+
 /**
  * 配置
  *
@@ -78,15 +80,16 @@ class Config extends Model
                 if ($value['options'] != '') {
                     $value['options'] = json_decode($value['options'], true);
                 }
+                
                 switch ($value['type']) {
                     case 'array':
                         $newConfigs[$value['name']] = json_decode($value['value'], true);
                         break;
                     case 'radio':
-                        $newConfigs[$value['name']] = isset($value['options'][$value['value']]) ? ['key' => $value['value'], 'value' => $value['options'][$value['value']]] : ['key' => $value['value'], 'value' => $value['value']];
+                        $newConfigs[$value['name']] = isset($value['options'][$value['value']]) ? $value['value'] : '';
                         break;
                     case 'select':
-                        $newConfigs[$value['name']] = isset($value['options'][$value['value']]) ? ['key' => $value['value'], 'value' => $value['options'][$value['value']]] : ['key' => $value['value'], 'value' => $value['value']];
+                        $newConfigs[$value['name']] = isset($value['options'][$value['value']]) ? $value['value'] : '';
                         break;
                     case 'checkbox':
                         if (empty($value['value'])) {
@@ -103,7 +106,7 @@ class Config extends Model
                         }
                         break;
                     case 'image':
-                        $newConfigs[$value['name']] = empty($value['value']) ? '' : laket_attachment_url($value['value']);
+                        $newConfigs[$value['name']] = !empty($value['value']) ? laket_attachment_url($value['value']) : '';
                         break;
                     case 'images':
                         if (!empty($value['value'])) {
@@ -115,14 +118,16 @@ class Config extends Model
                             $newConfigs[$value['name']] = [];
                         }
                         break;
-                    case 'Ueditor':
-                        $newConfigs[$value['name']] = htmlspecialchars_decode($value['value']);
-                        break;
                     default:
                         $newConfigs[$value['name']] = $value['value'];
                         break;
                 }
             }
+            
+            // 事件
+            $eventData = new SettingsEvent\Data\ConfigModelGetConfigs($configs, $newConfigs);
+            event(new SettingsEvent\ConfigModelGetConfigs($eventData));
+            $newConfigs = $eventData->newConfigs;
             
             $data = $newConfigs;
             
@@ -134,7 +139,7 @@ class Config extends Model
     
     public static function getSettings()
     {
-        $cacaheId = md5('laket-settings-config');
+        $cacaheId = md5('laket-settings-settings');
         
         $data = Cache::get($cacaheId);
         if (empty($data)) {
@@ -158,6 +163,7 @@ class Config extends Model
     public static function clearCahce()
     {
         Cache::delete(md5('laket-settings-config'));
+        Cache::delete(md5('laket-settings-settings'));
     }
     
     public static function hasItem(string $key)

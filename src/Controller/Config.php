@@ -210,7 +210,7 @@ class Config extends BaseController
             $this->success('配置添加成功！');
         } else {
             // ['name,title,ifoption,ifstring']
-            $fieldType = config('field_type');
+            $fieldType = ConfigModel::getFieldType();
             
             $group = $this->request->param('group');
             
@@ -265,7 +265,7 @@ class Config extends BaseController
             }
             
             // ['name,title,ifoption,ifstring']
-            $fieldType = config('field_type');
+            $fieldType = ConfigModel::getFieldType();
             
             $info = ConfigModel::where([
                 'id' => $id,

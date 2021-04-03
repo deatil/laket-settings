@@ -594,6 +594,9 @@
     {:laket_runhook('laket_settings_input_item', $vo)}
 
 {/volist}
+
+{:laket_runhook('laket_settings_input_item_js_before')}
+
 <style>
 .layui-form-item .layui-badge {
     float: right;
@@ -613,3 +616,5 @@ $('.uploader-list').each(function () {
     $(this).viewer();
 });
 </script>
+
+{:laket_runhook('laket_settings_input_item_js_after')}

@@ -56,6 +56,22 @@ class Config extends Model
         static::clearCahce();
     }
     
+    /**
+     * 字段类型
+     */
+    public static function getFieldType()
+    {
+        // ['name,title,ifoption,ifstring']
+        $fieldType = config('field_type');
+        
+        // 事件
+        $eventData = new SettingsEvent\Data\ConfigModelGetFieldType($fieldType);
+        event(new SettingsEvent\ConfigModelGetFieldType($eventData));
+        $fieldType = $eventData->fieldType;
+        
+        return $fieldType;
+    }
+    
     public static function getConfig(string $key = null, $default = null)
     {
         $settings = static::getConfigs();
@@ -65,10 +81,7 @@ class Config extends Model
     
     public static function getConfigs()
     {
-        $cacaheId = md5('laket-settings-config');
-        
-        $data = Cache::get($cacaheId);
-        if (empty($data)) {
+        $data = Cache::remember(md5('laket-settings-config'), function() {
             $configs = static::where([
                     ['status', '=', 1]
                 ])
@@ -129,20 +142,15 @@ class Config extends Model
             event(new SettingsEvent\ConfigModelGetConfigs($eventData));
             $newConfigs = $eventData->newConfigs;
             
-            $data = $newConfigs;
-            
-            Cache::set($cacaheId, $data);
-        }
+            return $newConfigs;
+        }, 0);
         
         return $data;
     }
     
     public static function getSettings()
     {
-        $cacaheId = md5('laket-settings-settings');
-        
-        $data = Cache::get($cacaheId);
-        if (empty($data)) {
+        $data = Cache::remember(md5('laket-settings-settings'), function() {
             $configs = static::where([
                     ['status', '=', 1]
                 ])
@@ -154,8 +162,8 @@ class Config extends Model
                 $data[$config['name']] = $config['value'];
             }
             
-            Cache::set($cacaheId, $data);
-        }
+            return $data;
+        }, 0);
         
         return $data;
     }

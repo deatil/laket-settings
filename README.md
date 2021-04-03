@@ -10,10 +10,10 @@
 ### 使用方法 
 
 *  composer安装
-    * `composer require laket/settings`
+    * `composer require laket/laket-settings`
 *  本地安装
     *  手动将模块上传到 `/flashs/laket/laket-settings` 目录
-*  最后在 `系统管理->闪存插件->全部` 安装添加的闪存插件
+*  最后在 `系统管理->闪存插件->本地` 安装添加的闪存插件
 
 
 ### 开源协议

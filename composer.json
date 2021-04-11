@@ -1,6 +1,6 @@
 {
     "name": "laket/laket-settings",
-    "description": "The settings is a laket-admin'extension.",
+    "description": "laket-admin 系统设置",
     "keywords": [
         "laket",
         "settings",

@@ -11,10 +11,8 @@ use Laket\Admin\Flash\Service as BaseService;
 class Service extends BaseService
 {
     /**
-     * composer
+     * slug
      */
-    public $composer = __DIR__ . '/../composer.json';
-    
     protected $slug = 'laket-admin.flash.settings';
     
     /**

@@ -6,7 +6,7 @@ namespace Laket\Admin\Settings\Controller;
 
 use think\facade\Validate;
 
-use Laket\Admin\Controller\Base as BaseController;
+use Laket\Admin\Flash\Controller as BaseController;
 use Laket\Admin\Settings\Model\Config as ConfigModel;
 use Laket\Admin\Settings\Event as SettingsEvent;
 

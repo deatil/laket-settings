@@ -373,7 +373,7 @@
                     <div id="file_list_{$vo.name}" class="uploader-list">
                         {notempty name="$vo.value"}
                         <div class="file-item thumbnail">
-                            <img data-original="{$vo.value|laket_attachment_url|default='admin/admin/img/none.png'}" src="{$vo.value|laket_attachment_url|default='admin/admin/img/none.png'}" width="100" style="max-height: 100px;">
+                            <img data-original="{$vo.value|laket_attachment_url|default='admin/img/none.png'}" src="{$vo.value|laket_attachment_url|default='admin/img/none.png'}" width="100" style="max-height: 100px;">
                             <i class="iconfont icon-delete_fill remove-picture" data-id="{$vo.value}"></i>
                         </div>
                         {/notempty}
@@ -409,7 +409,7 @@
                         {notempty name="$vo.value"}
                         {volist name="$vo.value|explode=',',###" id="v"}
                         <div class="file-item thumbnail">
-                            <img data-original="{$v|laket_attachment_url}" src="{$v|laket_attachment_url|default='admin/admin/img/none.png'}" width="100" style="max-height: 100px;">
+                            <img data-original="{$v|laket_attachment_url}" src="{$v|laket_attachment_url|default='admin/img/none.png'}" width="100" style="max-height: 100px;">
                             <i class="iconfont icon-delete_fill remove-picture" data-id="{$v}"></i>
                             <i class="iconfont icon-yidong move-picture"></i>
                         </div>
@@ -452,7 +452,7 @@
         </div>
         <script type="text/javascript">
         layui.config({
-            base: 'admin/libs/layui-extend/'
+            base: 'admin/js/layui-extend/'
         }).extend({
             tagsinput: 'tagsinput/tagsinput',
         }).use(["jquery", "tagsinput"], function() {
@@ -602,12 +602,12 @@
     float: right;
 }
 </style>
-<script type="text/javascript" src="admin/libs/webuploader/webuploader.min.js"></script>
-<link rel="stylesheet" href="admin/libs/webuploader/webuploader.css">
+<script type="text/javascript" src="admin/js/webuploader/webuploader.min.js"></script>
+<link rel="stylesheet" href="admin/js/webuploader/webuploader.css">
 
-<script type="text/javascript" src="admin/libs/Sortable.js"></script>
-<script type="text/javascript" src="admin/libs/viewer/viewer.min.js"></script>
-<link rel="stylesheet" href="admin/libs/viewer/viewer.min.css">
+<script type="text/javascript" src="admin/js/Sortable.js"></script>
+<script type="text/javascript" src="admin/js/viewer/viewer.min.js"></script>
+<link rel="stylesheet" href="admin/js/viewer/viewer.min.css">
 
 <script type="text/javascript">
 $('.uploader-list').each(function () {

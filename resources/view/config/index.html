@@ -24,18 +24,26 @@
 {/block}
 
 {block name="script"}
+
+{php}
+$addSug = ['get:admin.settings.add', 'post:admin.settings.add-post'];
+$editSug = ['get:admin.settings.edit', 'post:admin.settings.edit-post'];
+$delSug = 'post:admin.settings.del-post';
+{/php}
+
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container">
-        {if laket_check_permission(['admin.settings.add', 'admin.settings.add-post'], 'and')}
+        {if laket_check_permission($addSug, 'and')}
             <a class="layui-btn layui-btn-sm layui-iframe" href="{:laket_route('admin.settings.add')}?group={$group}" title="新增配置项">新增配置项</a>
         {/if}
     </div>
 </script>
 <script type="text/html" id="barTool">
-    {if laket_check_permission(['admin.settings.edit', 'admin.settings.edit-post'], 'and')}
+    {if laket_check_permission($editSug, 'and')}
         <a href='{:laket_route("admin.settings.edit-post")}?id={{ d.id }}' class="layui-btn layui-btn-xs layui-iframe" title="编辑配置项">编辑</a>
     {/if}
-    {if laket_check_permission('admin.settings.del-post')}
+    
+    {if laket_check_permission($delSug)}
         <a href='{:laket_route("admin.settings.del-post")}?id={{ d.id }}' class="layui-btn layui-btn-danger layui-btn-xs layui-tr-del">删除</a>
     {/if}
 </script>

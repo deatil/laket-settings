@@ -2,7 +2,7 @@
 
 return [
     "title" => "系统配置",
-    "url" => "admin/settings/setting",
+    "url" => "settings/setting",
     "method" => "GET",
     "slug" => $this->slug,
     "icon" => "icon-zidongxiufu",
@@ -12,7 +12,7 @@ return [
     "children" => [
         [
             "title" => "系统设置",
-            "url" => "admin/settings/setting",
+            "url" => "settings/setting",
             "method" => "GET",
             "slug" => "admin.settings.setting",
             "icon" => "icon-setup",
@@ -21,7 +21,7 @@ return [
             "children" => [
                 [
                     "title" => "系统设置",
-                    "url" => "admin/settings/setting",
+                    "url" => "settings/setting",
                     "method" => "GET",
                     "slug" => "admin.settings.setting",
                     "menu_show" => 0,
@@ -29,7 +29,7 @@ return [
                 ],
                 [
                     "title" => "系统设置",
-                    "url" => "admin/settings/setting",
+                    "url" => "settings/setting",
                     "method" => "POST",
                     "slug" => "admin.settings.setting-post",
                     "menu_show" => 0,
@@ -39,7 +39,7 @@ return [
         ],
         [
             "title" => "配置管理",
-            "url" => "admin/settings/index",
+            "url" => "settings/index",
             "method" => "GET",
             "slug" => "admin.settings.index",
             "icon" => "icon-apartment",
@@ -48,7 +48,7 @@ return [
             "children" => [
                 [
                     "title" => "系统设置",
-                    "url" => "admin/settings/index",
+                    "url" => "settings/index",
                     "method" => "GET",
                     "slug" => "admin.settings.index",
                     "menu_show" => 0,
@@ -56,7 +56,7 @@ return [
                 ],
                 [
                     "title" => "系统设置",
-                    "url" => "admin/settings/index",
+                    "url" => "settings/index",
                     "method" => "POST",
                     "slug" => "admin.settings.index-post",
                     "menu_show" => 0,
@@ -64,7 +64,7 @@ return [
                 ],
                 [
                     "title" => "全部配置",
-                    "url" => "admin/settings/all",
+                    "url" => "settings/all",
                     "method" => "GET",
                     "slug" => "admin.settings.all",
                     "menu_show" => 0,
@@ -72,7 +72,7 @@ return [
                 ],
                 [
                     "title" => "全部配置",
-                    "url" => "admin/settings/all",
+                    "url" => "settings/all",
                     "method" => "POST",
                     "slug" => "admin.settings.all-post",
                     "menu_show" => 0,
@@ -80,7 +80,7 @@ return [
                 ],
                 [
                     "title" => "新增配置",
-                    "url" => "admin/settings/add",
+                    "url" => "settings/add",
                     "method" => "GET",
                     "slug" => "admin.settings.add",
                     "menu_show" => 0,
@@ -88,7 +88,7 @@ return [
                 ],
                 [
                     "title" => "新增配置",
-                    "url" => "admin/settings/add",
+                    "url" => "settings/add",
                     "method" => "POST",
                     "slug" => "admin.settings.add-post",
                     "menu_show" => 0,
@@ -96,7 +96,7 @@ return [
                 ],
                 [
                     "title" => "编辑配置",
-                    "url" => "admin/settings/edit",
+                    "url" => "settings/edit",
                     "method" => "GET",
                     "slug" => "admin.settings.edit",
                     "menu_show" => 0,
@@ -104,7 +104,7 @@ return [
                 ],
                 [
                     "title" => "编辑配置",
-                    "url" => "admin/settings/edit",
+                    "url" => "settings/edit",
                     "method" => "POST",
                     "slug" => "admin.settings.edit-post",
                     "menu_show" => 0,
@@ -112,7 +112,7 @@ return [
                 ],
                 [
                     "title" => "删除配置",
-                    "url" => "admin/settings/del",
+                    "url" => "settings/del",
                     "method" => "POST",
                     "slug" => "admin.settings.del-post",
                     "menu_show" => 0,
@@ -120,7 +120,7 @@ return [
                 ],
                 [
                     "title" => "配置排序",
-                    "url" => "admin/settings/listorder",
+                    "url" => "settings/listorder",
                     "method" => "POST",
                     "slug" => "admin.settings.listorder-post",
                     "menu_show" => 0,
@@ -128,7 +128,7 @@ return [
                 ],
                 [
                     "title" => "设置状态",
-                    "url" => "admin/settings/setstate",
+                    "url" => "settings/setstate",
                     "method" => "POST",
                     "slug" => "admin.settings.setstate-post",
                     "menu_show" => 0,

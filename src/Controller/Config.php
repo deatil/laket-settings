@@ -204,10 +204,10 @@ class Config extends BaseController
             
             $status = ConfigModel::create($data);
             if (false === $status) {
-                $this->error('配置添加失败！');
+                return $this->error('配置添加失败！');
             }
             
-            $this->success('配置添加成功！');
+            return $this->success('配置添加成功！');
         } else {
             // ['name,title,ifoption,ifstring']
             $fieldType = ConfigModel::getFieldType();
@@ -247,21 +247,21 @@ class Config extends BaseController
                 'id' => $id,
             ])->find();
             if (empty($info)) {
-                $this->error('信息不存在！');
+                return $this->error('信息不存在！');
             }
             
             $status = ConfigModel::update($data, [
                     'id' => $id,
                 ]);
             if ($status === false) {
-                $this->error('配置编辑失败！');
+                return $this->error('配置编辑失败！');
             }
             
-            $this->success('配置编辑成功！');
+            return $this->success('配置编辑成功！');
         } else {
             $id = $this->request->param('id');
             if (empty($id) || strlen($id) != 32) {
-                $this->error('参数错误！');
+                return $this->error('参数错误！');
             }
             
             // ['name,title,ifoption,ifstring']
@@ -271,7 +271,7 @@ class Config extends BaseController
                 'id' => $id,
             ])->find();
             if (empty($info)) {
-                $this->error('信息不存在！');
+                return $this->error('信息不存在！');
             }
             
             $this->assign([
@@ -291,24 +291,24 @@ class Config extends BaseController
     {
         $id = $this->request->param('id');
         if (empty($id) || strlen($id) != 32) {
-            $this->error('参数错误！');
+            return $this->error('参数错误！');
         }
         
         $info = ConfigModel::where([
             'id' => $id,
         ])->find();
         if (empty($info)) {
-            $this->error('信息不存在！');
+            return $this->error('信息不存在！');
         }
         
         $re = ConfigModel::where([
             'id' => $id,
         ])->delete();
         if ($re === false) {
-            $this->error('删除失败！');
+            return $this->error('删除失败！');
         }
         
-        $this->success('删除成功');
+        return $this->success('删除成功');
     }
     
     /**
@@ -318,7 +318,7 @@ class Config extends BaseController
     {
         $id = $this->request->param('id');
         if (empty($id) || strlen($id) != 32) {
-            $this->error('参数不能为空！');
+            return $this->error('参数不能为空！');
         }
         
         $listorder = $this->request->param('value/d', 0);
@@ -333,10 +333,10 @@ class Config extends BaseController
             ]);
         
         if ($rs === false) {
-            $this->error("排序失败！");
+            return $this->error("排序失败！");
         }
         
-        $this->success("排序成功！");
+        return $this->success("排序成功！");
     }
     
     /**
@@ -346,7 +346,7 @@ class Config extends BaseController
     {
         $id = $this->request->param('id');
         if (empty($id) || strlen($id) != 32) {
-            $this->error('参数不能为空！');
+            return $this->error('参数不能为空！');
         }
         
         $status = $this->request->param('status/d');
@@ -360,10 +360,10 @@ class Config extends BaseController
                 'status' => $status,
             ]);
         if ($rs === false) {
-            $this->error('操作失败！');
+            return $this->error('操作失败！');
         }
         
-        $this->success('操作成功！');
+        return $this->success('操作成功！');
     }
     
 }

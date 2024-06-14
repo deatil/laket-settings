@@ -4,7 +4,7 @@ return [
     "title" => "系统配置",
     "url" => "settings/setting",
     "method" => "GET",
-    "slug" => $this->slug,
+    "slug" => $slug,
     "icon" => "icon-zidongxiufu",
     "listorder" => 1000,
     "menu_show" => 1,

@@ -594,11 +594,11 @@
         
     {/switch}
 
-    {:laket_runhook('laket_settings_input_item', $vo)}
+    {:do_action('laket_settings_input_item', $vo)}
 
 {/volist}
 
-{:laket_runhook('laket_settings_input_item_js_before')}
+{:do_action('laket_settings_input_item_js_before')}
 
 <style>
 .layui-form-item .layui-badge {
@@ -618,4 +618,4 @@ $('.uploader-list').each(function () {
 });
 </script>
 
-{:laket_runhook('laket_settings_input_item_js_after')}
+{:do_action('laket_settings_input_item_js_after')}

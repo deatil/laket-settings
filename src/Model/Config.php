@@ -63,11 +63,9 @@ class Config extends Model
     {
         // ['name,title,ifoption,ifstring']
         $fieldType = config('field_type');
-        
+
         // 事件
-        $eventData = new SettingsEvent\Data\ConfigModelGetFieldType($fieldType);
-        event(new SettingsEvent\ConfigModelGetFieldType($eventData));
-        $fieldType = $eventData->fieldType;
+        $fieldType = apply_filters('ConfigModelGetFieldType', $fieldType);
         
         return $fieldType;
     }
@@ -138,9 +136,7 @@ class Config extends Model
             }
             
             // 事件
-            $eventData = new SettingsEvent\Data\ConfigModelGetConfigs($configs, $newConfigs);
-            event(new SettingsEvent\ConfigModelGetConfigs($eventData));
-            $newConfigs = $eventData->newConfigs;
+            $newConfigs = apply_filters('ConfigModelGetConfigs', $newConfigs, $configs);
             
             return $newConfigs;
         }, 0);

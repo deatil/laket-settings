@@ -167,9 +167,7 @@ class Config extends BaseController
             }
             
             // 事件
-            $eventData = new SettingsEvent\Data\ConfigControllerSettingGet($configList);
-            event(new SettingsEvent\ConfigControllerSettingGet($eventData));
-            $configList = $eventData->configs;
+            $configList = apply_filters('ConfigControllerSettingGet', $configList);
             
             $this->assign([
                 'groupArray' => ConfigModel::getConfig('config_group'),

@@ -16,7 +16,7 @@ return [
             "method" => "GET",
             "slug" => "admin.settings.setting",
             "icon" => "icon-setup",
-            "listorder" => 5,
+            "listorder" => 25,
             "menu_show" => 1,
             "children" => [
                 [
@@ -25,7 +25,7 @@ return [
                     "method" => "GET",
                     "slug" => "admin.settings.setting",
                     "menu_show" => 0,
-                    "listorder" => 5,
+                    "listorder" => 25,
                 ],
                 [
                     "title" => "系统设置",
@@ -52,7 +52,7 @@ return [
                     "method" => "GET",
                     "slug" => "admin.settings.index",
                     "menu_show" => 0,
-                    "listorder" => 5,
+                    "listorder" => 25,
                 ],
                 [
                     "title" => "系统设置",
@@ -60,7 +60,7 @@ return [
                     "method" => "POST",
                     "slug" => "admin.settings.index-post",
                     "menu_show" => 0,
-                    "listorder" => 10,
+                    "listorder" => 24,
                 ],
                 [
                     "title" => "全部配置",
@@ -68,7 +68,7 @@ return [
                     "method" => "GET",
                     "slug" => "admin.settings.all",
                     "menu_show" => 0,
-                    "listorder" => 15,
+                    "listorder" => 23,
                 ],
                 [
                     "title" => "全部配置",
@@ -76,7 +76,7 @@ return [
                     "method" => "POST",
                     "slug" => "admin.settings.all-post",
                     "menu_show" => 0,
-                    "listorder" => 20,
+                    "listorder" => 22,
                 ],
                 [
                     "title" => "新增配置",
@@ -84,7 +84,7 @@ return [
                     "method" => "GET",
                     "slug" => "admin.settings.add",
                     "menu_show" => 0,
-                    "listorder" => 25,
+                    "listorder" => 21,
                 ],
                 [
                     "title" => "新增配置",
@@ -92,7 +92,7 @@ return [
                     "method" => "POST",
                     "slug" => "admin.settings.add-post",
                     "menu_show" => 0,
-                    "listorder" => 30,
+                    "listorder" => 20,
                 ],
                 [
                     "title" => "编辑配置",
@@ -100,7 +100,7 @@ return [
                     "method" => "GET",
                     "slug" => "admin.settings.edit",
                     "menu_show" => 0,
-                    "listorder" => 35,
+                    "listorder" => 19,
                 ],
                 [
                     "title" => "编辑配置",
@@ -108,7 +108,7 @@ return [
                     "method" => "POST",
                     "slug" => "admin.settings.edit-post",
                     "menu_show" => 0,
-                    "listorder" => 40,
+                    "listorder" => 18,
                 ],
                 [
                     "title" => "删除配置",
@@ -116,7 +116,7 @@ return [
                     "method" => "POST",
                     "slug" => "admin.settings.del-post",
                     "menu_show" => 0,
-                    "listorder" => 45,
+                    "listorder" => 17,
                 ],
                 [
                     "title" => "配置排序",
@@ -124,7 +124,7 @@ return [
                     "method" => "POST",
                     "slug" => "admin.settings.listorder-post",
                     "menu_show" => 0,
-                    "listorder" => 50,
+                    "listorder" => 16,
                 ],
                 [
                     "title" => "设置状态",
@@ -132,7 +132,7 @@ return [
                     "method" => "POST",
                     "slug" => "admin.settings.setstate-post",
                     "menu_show" => 0,
-                    "listorder" => 55,
+                    "listorder" => 15,
                 ],
             ],
         ],

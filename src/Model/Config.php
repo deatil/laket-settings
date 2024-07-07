@@ -65,7 +65,7 @@ class Config extends Model
         $fieldType = config('field_type');
 
         // 事件
-        $fieldType = apply_filters('ConfigModelGetFieldType', $fieldType);
+        $fieldType = apply_filters('config_model_get_field_type', $fieldType);
         
         return $fieldType;
     }
@@ -136,7 +136,7 @@ class Config extends Model
             }
             
             // 事件
-            $newConfigs = apply_filters('ConfigModelGetConfigs', $newConfigs, $configs);
+            $newConfigs = apply_filters('config_model_get_configs', $newConfigs, $configs);
             
             return $newConfigs;
         }, 0);

@@ -167,7 +167,7 @@ class Config extends BaseController
             }
             
             // 事件
-            $configList = apply_filters('ConfigControllerSettingGet', $configList);
+            $configList = apply_filters('config_controller_setting_get', $configList);
             
             $this->assign([
                 'groupArray' => ConfigModel::getConfig('config_group'),

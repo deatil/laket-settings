@@ -39,6 +39,9 @@ class Service extends BaseService
         
         // 引入函数
         $this->loadFilesFrom(__DIR__ . "/helper.php");
+        
+        // 添加事件
+        $this->addEvents();
     }
     
     /**
@@ -87,6 +90,22 @@ class Service extends BaseService
     public function disable()
     {
         Menu::disable($this->slug);
+    }
+    
+    /**
+     * 添加事件
+     */
+    protected function addEvents()
+    {
+        // 事件
+        add_filter('admin_main_url', function($url) {
+            $settingUrl = laket_setting('admin_main');
+            if (! empty($settingUrl)) {
+                $url = $settingUrl;
+            }
+            
+            return $url;
+        });
     }
     
 }

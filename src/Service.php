@@ -115,7 +115,7 @@ class Service extends BaseService
     protected function addEvents()
     {
         // 事件
-        add_filter('admin_main_url', function($url) {
+        add_filter('admin.main.url', function($url) {
             $settingUrl = laket_setting('admin_main');
             if (! empty($settingUrl)) {
                 $url = $settingUrl;
